@@ -2107,10 +2107,10 @@ void process_commands()
     #if defined(FAN_PIN) && FAN_PIN > -1
       case 106: //M106 Fan On
 	if (code_seen('S')){
-	   fanSpeed=constrain(code_value(),0,255);
+	   fanSpeed=constrain(code_value(),0,130);
 	}
 	else {
-	  fanSpeed=255;
+	  fanSpeed=130;
 	}
 	break;
       case 107: //M107 Fan Off
@@ -2866,8 +2866,8 @@ void process_commands()
       lcd_update();
       lcd_show_status();
 
-      target[E_AXIS] += 10.0;
-      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS], target[E_AXIS], 300/60, active_extruder);
+      target[E_AXIS] += 15.0;
+      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS], target[E_AXIS], 150/60, active_extruder);
       st_synchronize();
 
       if(code_seen('L')) {
@@ -2896,11 +2896,14 @@ void process_commands()
       LCD_MESSAGEPGM(MSG_LOAD_CLICK);
       lcd_update();
       lcd_show_status();
-      target[E_AXIS]+=600;
-      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS],target[E_AXIS], 2000/60, active_extruder);
-      st_synchronize();
       target[E_AXIS]+=100;
       plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS],target[E_AXIS], 200/60, active_extruder);
+      st_synchronize();
+      target[E_AXIS]+=600;
+      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS],target[E_AXIS], 1000/60, active_extruder);
+      st_synchronize();
+      target[E_AXIS]+=100;
+      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS],target[E_AXIS], 100/60, active_extruder);
       st_synchronize();
       
       do {
@@ -3166,12 +3169,12 @@ void process_commands()
       plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS],current_position[E_AXIS], 200/60, active_extruder);
       st_synchronize();
       //-- Extruir!
-      current_position[E_AXIS] += 600.0;
+      current_position[E_AXIS] += 580.0;
       plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS],current_position[E_AXIS], 1000/60, active_extruder);
       st_synchronize(); 
 
-      current_position[E_AXIS] += 200.0;
-      plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS],current_position[E_AXIS], 200/60, active_extruder);
+      current_position[E_AXIS] += 100.0;
+      plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS],current_position[E_AXIS], 100/60, active_extruder);
       st_synchronize();
 	//  do_blocking_extrude_to(100);
       current_position[E_AXIS] -= 5.0;
@@ -3187,7 +3190,7 @@ void process_commands()
        plan_set_position(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS], current_position[E_AXIS]); 
     
       //-- Extruir!
-      current_position[E_AXIS] += 20.0;
+      current_position[E_AXIS] += 30.0;
       plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS],current_position[E_AXIS], 200/60, active_extruder);
       st_synchronize(); 
       
