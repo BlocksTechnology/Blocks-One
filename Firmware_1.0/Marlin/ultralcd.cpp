@@ -422,7 +422,7 @@ static void lcd_main_menu()
         MENU_ITEM(function, MSG_FILAMENTCHANGE, lcd_change_filament);
        #endif
        MENU_ITEM_EDIT(int3, MSG_NOZZLE, &target_temperature[0], EXTRUDE_MINTEMP, HEATER_0_MAXTEMP - 10);
-       MENU_ITEM_EDIT(int3, MSG_BED, &target_temperature_bed, 0, BED_MAXTEMP - 15);
+       MENU_ITEM_EDIT(int3, MSG_BED, &target_temperature_bed, 0, BED_MAXTEMP - 10);
        MENU_ITEM_EDIT(int3, MSG_FAN_SPEED, &fanSpeed, 0, 255);
        MENU_ITEM(submenu, MSG_SPEED, lcd_speed_printing);
        
