@@ -7,4 +7,5 @@ Blocks one is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inte
 
 
 # Firmware
-The firmware was based on Marlin from https://github.com/bq/Marlin and https://github.com/bq/prusa-i3-hephestos
+The firmware was based on Marlin from https://github.com/bq/Marlin
+
