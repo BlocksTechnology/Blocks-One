@@ -1,0 +1,13 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="1">
+            <File firstVisibleLine="3177" xOffset="0" scrollWidth="1632" startPos="101477" endPos="101477" selMode="0" lang="C++" encoding="-1" filename="C:\Users\Blocks3d\Desktop\Blocks-One-master\Firmware_1.0\Marlin\Marlin_main.cpp" backupFilePath="" originalFileLastModifTimestamp="1489498458" />
+            <File firstVisibleLine="1301" xOffset="0" scrollWidth="2184" startPos="38852" endPos="38852" selMode="0" lang="C++" encoding="-1" filename="C:\Users\Blocks3d\Desktop\Blocks-One-master\Firmware_1.0\Marlin\ultralcd.cpp" backupFilePath="" originalFileLastModifTimestamp="1489499298" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1616" startPos="22860" endPos="22867" selMode="0" lang="C++" encoding="-1" filename="C:\Users\Blocks3d\Desktop\Blocks-One-master\Firmware_1.0\Marlin\Configuration.h" backupFilePath="" originalFileLastModifTimestamp="1489430748" />
+            <File firstVisibleLine="129" xOffset="0" scrollWidth="1064" startPos="6653" endPos="6658" selMode="0" lang="C++" encoding="-1" filename="C:\Users\Blocks3d\Desktop\Blocks-One-master\Firmware_1.0\Marlin\Configuration_adv.h" backupFilePath="" originalFileLastModifTimestamp="1489430749" />
+            <File firstVisibleLine="20" xOffset="0" scrollWidth="616" startPos="1112" endPos="1141" selMode="0" lang="C++" encoding="-1" filename="C:\Users\Blocks3d\Desktop\Blocks-One-master\Firmware_1.0\Marlin\temperature.h" backupFilePath="" originalFileLastModifTimestamp="1489430752" />
+            <File firstVisibleLine="24" xOffset="0" scrollWidth="1936" startPos="585" endPos="585" selMode="0" lang="C++" encoding="-1" filename="C:\Users\Blocks3d\Desktop\Blocks-One-master\Firmware_1.0\Marlin\language.h" backupFilePath="" originalFileLastModifTimestamp="1489493937" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>
