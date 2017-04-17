@@ -10,9 +10,9 @@ The new version is based on v1.0 with some new features added:
  - Filament runout (needs printing new extruder and adding a microswitch to work)
 
 Updating the firmware:
- - Download and install [Cura 15.02.1](http://software.ultimaker.com/old/Cura_15.02.1.exe)
+ - Download and install Cura 15.02.1: [Win](http://software.ultimaker.com/old/Cura_15.02.1.exe) / [Mac](http://software.ultimaker.com/old/Cura-15.02.1-MacOS.dmg)
  - Download the [HEX file](https://github.com/BlocksTechnology/Blocks-One/blob/master/Firmware_1.1/Blocks_one_1.1.hex)
- - Connect your printer to USB port
+ - Connect your USB printer cable
  - Open Cura and select menu "Machine" -> "Install custom firmware"
  - Select the downloaded HEX file.
  - Wait for the upload to finish and press "OK"
