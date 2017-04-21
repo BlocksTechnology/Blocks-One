@@ -427,12 +427,12 @@ void thermal_runaway_protection(int *state, unsigned long *timer, int *retry, fl
     case 0: // "Heater Inactive" state
       if (target_temperature > 0) *state = 1;
 
-              SERIAL_ECHOLN("Heater inactive");
+           //   SERIAL_ECHOLN("Heater inactive");
       break;
     case 1: // "First Heating" state
       if (temperature >= target_temperature) *state = 2;
 
-              SERIAL_ECHOLN("First heating");
+            //  SERIAL_ECHOLN("First heating");
       break;
     case 2: // "Temperature Stable" state
       if (temperature >= (target_temperature - hysteresis_degc))
@@ -440,7 +440,7 @@ void thermal_runaway_protection(int *state, unsigned long *timer, int *retry, fl
         *timer = millis();
         *retry = 0;
 
-              SERIAL_ECHOLN("Heater stable");
+           //   SERIAL_ECHOLN("Heater stable");
       }
       
       else if ( (millis() - *timer) > ((unsigned long) period_seconds) * 1000)
