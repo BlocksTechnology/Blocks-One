@@ -406,16 +406,17 @@ static void lcd_sdcard_stop()
 
    card.sdprinting = false;
     card.closefile();
-
+setTargetHotend0(0);
     setTargetHotend(0,0);
 
     quickStop();
 
-    plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS], current_position[E_AXIS]-6, 5000/60, active_extruder);
+    //plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS], current_position[E_AXIS]-6, 5000/60, active_extruder);
 
       plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS]+20, current_position[E_AXIS], manual_feedrate[X_AXIS]/60, active_extruder);
+      enquecommand_P(PSTR("M104 S0"));
  
-enquecommand_P(PSTR("G28 X Y"));
+enquecommand_P(PSTR("G28 Y X"));
 
     if(SD_FINISHED_STEPPERRELEASE)
     {
@@ -428,7 +429,9 @@ enquecommand_P(PSTR("G28 X Y"));
     LCD_MESSAGEPGM(WELCOME_MSG);
     lcd_update();
 setTargetBed(0);
+setTargetHotend0(0);
     lcd_return_to_status();
+    
 }
 
 static void lcd_change_filament()
@@ -1852,6 +1855,7 @@ static void menu_action_gcode(const char* pgcode) { enquecommand_P(pgcode); }
 static void menu_action_function(menuFunc_t data) { (*data)(); }
 static void menu_action_sdfile(const char* filename, char* longFilename)
 {
+  enquecommand_P(PSTR("G28"));
     setTargetHotend0(200);
     char cmd[30];
     char* c;

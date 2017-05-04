@@ -1600,18 +1600,13 @@ void process_commands()
         active_extruder_parked = true;
       #else
 
-  destination[Z_AXIS] = 8 * home_dir(Z_AXIS) * (-1);    // Set destination away from bed
-              feedrate = max_feedrate[Z_AXIS];
-              plan_buffer_line(destination[X_AXIS], destination[Y_AXIS], destination[Z_AXIS], destination[E_AXIS], feedrate, active_extruder);
-              current_position[Z_AXIS]=destination[Z_AXIS];
-              st_synchronize();
 
-        HOMEAXIS(X);
+        HOMEAXIS(Y); //Reversed for blocks one
       #endif
       }
 
       if((home_all_axis) || (code_seen(axis_codes[Y_AXIS]))) {
-        HOMEAXIS(Y);
+        HOMEAXIS(X);
       }
 
       if(code_seen(axis_codes[X_AXIS]))
