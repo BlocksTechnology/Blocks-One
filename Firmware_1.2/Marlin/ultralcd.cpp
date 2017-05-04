@@ -431,7 +431,7 @@ enquecommand_P(PSTR("G28 Y X"));
 setTargetBed(0);
 setTargetHotend0(0);
     lcd_return_to_status();
-    
+
 }
 
 static void lcd_change_filament()
@@ -1251,17 +1251,19 @@ void lcd_level_bed()
         {
           lcd.setCursor(2, 2);          
           lcd_printPGM(PSTR("Filament unloaded!"));         
-          
+          FilamentMenuActive=false;
           ChangeScreen=false;
           delay(1200);    
           
           encoderPosition = 0;
-          lcd.clear(); 
+          //lcd.clear(); 
           currentMenu = lcd_filament_menu;
-          lcd_update();
+          //lcd_update();
           //lcd_status_screen();
           pageShowInfo=0;
-          FilamentMenuActive=false;
+          lcd_update();
+          lcd_quick_feedback();
+          
      
         }
         break;
