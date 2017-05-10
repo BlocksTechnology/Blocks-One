@@ -4010,14 +4010,14 @@ lcd_update();
       }
       #endif
 
-      if((home_all_axis) || (code_seen(axis_codes[X_AXIS])))
+      if((home_all_axis) || (code_seen(axis_codes[Y_AXIS])))
       {
-      HOMEAXIS(X);
+      HOMEAXIS(Y);
   
       }
 
-      if((home_all_axis) || (code_seen(axis_codes[Y_AXIS]))) {
-  HOMEAXIS(Y);
+      if((home_all_axis) || (code_seen(axis_codes[X_AXIS]))) {
+  HOMEAXIS(X);
       }
 
       #if Z_HOME_DIR < 0                      // If homing towards BED do Z last
